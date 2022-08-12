@@ -4,6 +4,13 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
+
+import { BleManager } from 'react-native-ble-plx';
+// ★ここで
+// TypeError: null is not an object (evaluating '_BleModule.BleModule.createClient')
+// がでて怒られる
+export const manager = new BleManager(); 
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
